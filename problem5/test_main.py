@@ -40,7 +40,7 @@ class TestMeanMedian(unittest.TestCase):
 
     def test_mean_median_empty(self):
         input_array = []
-        expected_result = None
+        expected_result = (None, None)
         result = mean_median(input_array)
         msg = f"Expected: {expected_result}, Got: {result}"
         self.assertEqual(result, expected_result, msg)

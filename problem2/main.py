@@ -1,21 +1,30 @@
+# Problem 2 - Draw XYZ
 def draw_xyz(N):
-    pattern = ""
-    return pattern
+    result = ""
+    for i in range(1, N * N + 1):
+        if i % 3 == 0:
+            result += "X "
+        elif i % 2 == 0:
+            result += "Z "
+        else:
+            result += "Y "
+        
+        if i % N == 0:
+            result += "\n"  # Pindah ke baris berikutnya setelah mencetak N elemen
+    return result
 
-if __name__ == '__main__':
-    print(draw_xyz(3))
-    """
-    Y Z X
-    Z Y X
-    Y Z X
-    """
+# Main program to test the function
+def main():
+    try:
+        num = int(input("Masukkan nilai N: "))
+        if num > 0:
+            print(draw_xyz(num))
+        else:
+            print("Masukkan bilangan positif.")
+    except ValueError:
+        print("Input harus berupa bilangan bulat.")
 
-
-    print(draw_xyz(5))
-    """
-    Y Z X Z Y
-    X Y Z X Z
-    Y X Y Z X
-    Z Y X Y Z
-    X Z Y X Y
-    """
+# Karena inputnya sama dengan 3
+print(draw_xyz(3))
+# Karena inputnya sama dengan 5
+print(draw_xyz(5))

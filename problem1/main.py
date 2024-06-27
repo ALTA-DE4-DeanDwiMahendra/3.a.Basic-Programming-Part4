@@ -1,13 +1,19 @@
+# Problem 1 - Play With Asterisk
 def play_with_asterisk(n):
-    pattern = ""
-    return pattern
+    result = ""
+    for i in range(1, n + 1):
+        result += ' ' * (n - i) + '* ' * i + '\n'
+    return result
 
-if __name__ == '__main__':
-    print(play_with_asterisk(5))
-    """
-        *
-       * *
-      * * *
-     * * * *
-    * * * * *
-    """
+def main():
+    try:
+        num = int(input("Masukkan jumlah baris: "))
+        if num > 0:
+            print(play_with_asterisk(num))
+        else:
+            print("Masukkan bilangan positif.")
+    except ValueError:
+        print("Input harus berupa bilangan bulat.")
+
+# karena inputnya 5 maka
+print(play_with_asterisk(5))
